@@ -1,31 +1,31 @@
 {
-    "testId": "tpcds_sf1_original_parquet",
-    "type": "group",
-    "description": "Test TPCDS SF 1 queries via jdbc",
-    "categories": [
-        "smoke"
-    ],
-    "matrices": [
-        {
-            "query-file": ".*.sql",
-            "schema": "dfs.tpcds_sf1_parquet_views",
-            "output-format": "tsv",
-            "expected-file": ".*.e_tsv",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-        {
-            "mode": "cp",
-            "src": "Datasources/tpcds/sf1/parquet",
-            "dest": "tpcds_sf1/parquet"
-        },
-	{
-            "mode": "gen",
-            "src": "Datasources/tpcds/createViewsParquet.sh",
-            "dest": ""
-        }
-    ]
+  "datasources": [
+    {
+      "dest": "tpcds_sf1/parquet",
+      "src": "Datasources/tpcds/sf1/parquet",
+      "mode": "cp"
+    },
+    {
+      "dest": "",
+      "src": "Datasources/tpcds/createViewsParquet.sh",
+      "mode": "gen"
+    }
+  ],
+  "type": "group",
+  "testId": "tpcds_sf1_original_parquet",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.sql",
+      "expected-file": ".*.e_tsv",
+      "schema": "dfs.tpcds_sf1_parquet_views"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "description": "Test TPCDS SF 1 queries via jdbc"
 }

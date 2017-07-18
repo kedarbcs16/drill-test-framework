@@ -1,27 +1,29 @@
 {
-    "testId": "tpcds_sf100_hive_original_text",
-    "type": "group",
-    "description": "Test hive TPCDS SF 100 queries via jdbc",
-    "categories": [
-        "smoke"
-    ],
-    "dependencies" : ["hive"],
-    "matrices": [
-        {
-            "query-file": ".*.sql",
-            "schema": "hive.tpcds100_text",
-            "output-format": "tsv",
-            "expected-file": ".*.e_tsv",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-	{
-            "mode": "gen",
-            "src": "Datasources/hive_storage/execHive.sh framework/resources/Datasources/hive_storage/tpcds100/tpcds100_hive.ddl",
-            "dest": ""
-        }
-    ]
+  "description": "Test hive TPCDS SF 100 queries via jdbc",
+  "type": "group",
+  "dependencies": [
+    "hive"
+  ],
+  "testId": "tpcds_sf100_hive_original_text",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.sql",
+      "expected-file": ".*.e_tsv",
+      "schema": "hive.tpcds100_text"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "datasources": [
+    {
+      "dest": "",
+      "src": "Datasources/hive_storage/execHive.sh framework/resources/Datasources/hive_storage/tpcds100/tpcds100_hive.ddl",
+      "mode": "gen"
+    }
+  ]
 }

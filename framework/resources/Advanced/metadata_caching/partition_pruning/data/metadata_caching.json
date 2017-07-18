@@ -1,27 +1,27 @@
 {
-    "testId": "metadata_cache_pruning_advanced_data",
-    "type": "group",
-    "description": "Test mondrian queries via jdbc",
-    "submit-type": "jdbc",
-    "categories": [
-        "regression"
-    ],
-    "matrices": [
-        {
-            "query-file": ".*.q",
-            "schema": "dfs",
-            "output-format": "tsv",
-            "expected-file": ".*.e",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-      {
-        "mode": "gen",
-        "src": "Datasources/metadata_caching/advanced_gen.sh",
-        "dest": ""
-      }
-   ]
+  "description": "Test mondrian queries via jdbc",
+  "submit-type": "jdbc",
+  "type": "group",
+  "testId": "metadata_cache_pruning_advanced_data",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.q",
+      "expected-file": ".*.e",
+      "schema": "dfs"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "datasources": [
+    {
+      "dest": "",
+      "src": "Datasources/metadata_caching/advanced_gen.sh",
+      "mode": "gen"
+    }
+  ]
 }

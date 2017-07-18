@@ -1,26 +1,26 @@
 {
-    "testId": "testJsonGeneric",
-    "type": "group",
-    "description": "Test generic json queries",
-    "categories": [
-        "smoke"
-    ],
-    "matrices": [
-        {
-            "query-file": ".*.q",
-            "schema": "dfs.drillTestDir",
-            "output-format": "tsv",
-            "expected-file": ".*.e_tsv",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-     {
-       "mode": "cp",
-       "src": "Datasources/json_kvgenflatten/kvgen-complex-large.json",
-       "dest": "json_kvgenflatten/kvgen-complex-large.json"
-     } 
-   ]
+  "datasources": [
+    {
+      "dest": "json_kvgenflatten/kvgen-complex-large.json",
+      "src": "Datasources/json_kvgenflatten/kvgen-complex-large.json",
+      "mode": "cp"
+    }
+  ],
+  "type": "group",
+  "testId": "testJsonGeneric",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.q",
+      "expected-file": ".*.e_tsv",
+      "schema": "dfs.drillTestDir"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "description": "Test generic json queries"
 }

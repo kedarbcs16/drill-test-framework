@@ -1,32 +1,34 @@
 {
-    "testId": "advanced_hive",
-    "type": "group",
-    "description": "Long running hive queries",
-    "categories": [
-        "smoke"
-    ],
-    "dependencies" : ["hive"],
-    "matrices": [
-        {
-            "query-file": ".*.q",
-            "schema": "hive",
-            "output-format": "tsv",
-            "expected-file": ".*.e",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
+  "description": "Long running hive queries",
+  "type": "group",
+  "dependencies": [
+    "hive"
+  ],
+  "testId": "advanced_hive",
+  "matrices": [
     {
-        "mode": "cp",
-        "src": "Datasources/hive_storage/md1119_parquet",
-        "dest": "md1119_parquet"
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.q",
+      "expected-file": ".*.e",
+      "schema": "hive"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "datasources": [
+    {
+      "dest": "md1119_parquet",
+      "src": "Datasources/hive_storage/md1119_parquet",
+      "mode": "cp"
     },
     {
-       "mode": "gen",
-       "src": "Datasources/hive_storage/execHive.sh framework/resources/Datasources/hive_storage/md1119.ddl",
-       "dest": ""
+      "dest": "",
+      "src": "Datasources/hive_storage/execHive.sh framework/resources/Datasources/hive_storage/md1119.ddl",
+      "mode": "gen"
     }
-   ]
+  ]
 }

@@ -1,21 +1,20 @@
 {
-    "testId": "tpch_sf100_parquet",
-    "type": "group",
-    "description": "Test tpch queries via jdbc",
-    "categories": [
-        "smoke"
-    ],
-    "matrices": [
-        {
-            "query-file": ".*.q",
-            "schema": "dfs.drillTestDirTpch100Parquet",
-            "output-format": "tsv",
-            "expected-file": ".*.e_tsv",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-    ]
+  "datasources": [],
+  "type": "group",
+  "testId": "tpch_sf100_parquet",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.q",
+      "expected-file": ".*.e_tsv",
+      "schema": "dfs.drillTestDirTpch100Parquet"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "description": "Test tpch queries via jdbc"
 }

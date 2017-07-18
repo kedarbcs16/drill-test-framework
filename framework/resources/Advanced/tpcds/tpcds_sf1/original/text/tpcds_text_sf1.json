@@ -1,31 +1,31 @@
 {
-    "testId": "tpcds_sf1_original_text",
-    "type": "group",
-    "description": "Test TPCDS SF 1 original queries on text (with views on top) via jdbc",
-    "categories": [
-        "smoke"
-    ],
-    "matrices": [
-        {
-            "query-file": ".*.sql",
-            "schema": "dfs.tpcds_sf1_text_views",
-            "output-format": "tsv",
-            "expected-file": ".*.e_tsv",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-        {
-            "mode": "cp",
-            "src": "Datasources/tpcds/sf1/text",
-            "dest": "tpcds_sf1/text"
-        },
-	{
-            "mode": "gen",
-            "src": "Datasources/tpcds/createViewsText.sh",
-            "dest": ""
-        }
-    ]
+  "datasources": [
+    {
+      "dest": "tpcds_sf1/text",
+      "src": "Datasources/tpcds/sf1/text",
+      "mode": "cp"
+    },
+    {
+      "dest": "",
+      "src": "Datasources/tpcds/createViewsText.sh",
+      "mode": "gen"
+    }
+  ],
+  "type": "group",
+  "testId": "tpcds_sf1_original_text",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.sql",
+      "expected-file": ".*.e_tsv",
+      "schema": "dfs.tpcds_sf1_text_views"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "description": "Test TPCDS SF 1 original queries on text (with views on top) via jdbc"
 }

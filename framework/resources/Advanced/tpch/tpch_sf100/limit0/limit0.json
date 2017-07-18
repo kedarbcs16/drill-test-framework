@@ -1,21 +1,20 @@
 {
-    "testId": "tpch_tpch_sf100_limit0",
-    "type": "group",
-    "description": "TPCH queries wrapped in LIMIT 0",
-    "categories": [
-        "smoke"
-    ],
-    "matrices": [
-        {
-            "query-file": ".*.q",
-            "schema": "dfs.drillTestDirTpch100Parquet",
-            "output-format": "tsv",
-            "expected-file": ".*.e_tsv",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-    ]
+  "datasources": [],
+  "type": "group",
+  "testId": "tpch_tpch_sf100_limit0",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.q",
+      "expected-file": ".*.e_tsv",
+      "schema": "dfs.drillTestDirTpch100Parquet"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "description": "TPCH queries wrapped in LIMIT 0"
 }

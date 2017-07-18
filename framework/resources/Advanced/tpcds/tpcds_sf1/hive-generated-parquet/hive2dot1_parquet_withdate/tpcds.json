@@ -1,26 +1,26 @@
 {
-    "testId": "tpcds_sf1_hive2dot1_parquet",
-    "type": "group",
-    "description": "Test TPCDS SF 1 original queries on text (with views on top) via jdbc",
-    "categories": [
-        "smoke"
-    ],
-    "matrices": [
-        {
-            "query-file": ".*.sql",
-            "schema": "dfs.tpcds1_hive2dot1_withdate",
-            "output-format": "tsv",
-            "expected-file": ".*.e_tsv",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-      {
-        "mode": "cp",
-        "src": "Datasources/tpcds_hivegenerated_parquet/tpcds1_hive2dot1_withdate",
-        "dest": "tpcds1_hive2dot1_withdate"
-      } 
-    ]
+  "datasources": [
+    {
+      "dest": "tpcds1_hive2dot1_withdate",
+      "src": "Datasources/tpcds_hivegenerated_parquet/tpcds1_hive2dot1_withdate",
+      "mode": "cp"
+    }
+  ],
+  "type": "group",
+  "testId": "tpcds_sf1_hive2dot1_parquet",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.sql",
+      "expected-file": ".*.e_tsv",
+      "schema": "dfs.tpcds1_hive2dot1_withdate"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "description": "Test TPCDS SF 1 original queries on text (with views on top) via jdbc"
 }

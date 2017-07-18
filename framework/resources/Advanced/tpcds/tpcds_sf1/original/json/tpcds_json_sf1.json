@@ -1,31 +1,31 @@
 {
-    "testId": "tpcds_sf1_original_json",
-    "type": "group",
-    "description": "Test TPCDS SF 1 original queries on JSON (with views)",
-    "categories": [
-        "smoke"
-    ],
-    "matrices": [
-        {
-            "query-file": ".*.sql",
-            "schema": "dfs.tpcds_sf1_json_views",
-            "output-format": "tsv",
-            "expected-file": ".*.e_tsv",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-        {
-            "mode": "cp",
-            "src": "Datasources/tpcds/sf1/json",
-            "dest": "tpcds_sf1/json"
-        },
-	{
-            "mode": "gen",
-            "src": "Datasources/tpcds/createViewsJson.sh",
-            "dest": ""
-        }
-    ]
+  "datasources": [
+    {
+      "dest": "tpcds_sf1/json",
+      "src": "Datasources/tpcds/sf1/json",
+      "mode": "cp"
+    },
+    {
+      "dest": "",
+      "src": "Datasources/tpcds/createViewsJson.sh",
+      "mode": "gen"
+    }
+  ],
+  "type": "group",
+  "testId": "tpcds_sf1_original_json",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.sql",
+      "expected-file": ".*.e_tsv",
+      "schema": "dfs.tpcds_sf1_json_views"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "description": "Test TPCDS SF 1 original queries on JSON (with views)"
 }

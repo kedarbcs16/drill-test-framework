@@ -1,32 +1,34 @@
 {
-    "testId": "tpcds_sf1_hive1dot2_native_withdate",
-    "type": "group",
-    "description": "Test TPCDS SF 1 original queries on text (with views on top) via jdbc",
-    "categories": [
-        "smoke"
-    ],
-    "dependencies" : ["hive"],
-    "matrices": [
-        {
-            "query-file": ".*.sql",
-            "schema": "hive.tpcds1_hive1dot2_withdate",
-            "output-format": "tsv",
-            "expected-file": ".*.e_tsv",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-      {
-        "mode": "cp",
-        "src": "Datasources/tpcds_hivegenerated_parquet/tpcds1_hive1dot2_parquet_withdate",
-        "dest": "tpcds1_hive1dot2_withdate"
-      },
-      {
-       "mode": "gen",
-       "src": "bin/execHive.sh framework/resources/Datasources/hive_storage/tpcds_parquet/tpcds1_hive1dot2_withdate.ddl",
-       "dest": ""
-      } 
-    ]
+  "description": "Test TPCDS SF 1 original queries on text (with views on top) via jdbc",
+  "type": "group",
+  "dependencies": [
+    "hive"
+  ],
+  "testId": "tpcds_sf1_hive1dot2_native_withdate",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.sql",
+      "expected-file": ".*.e_tsv",
+      "schema": "hive.tpcds1_hive1dot2_withdate"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "datasources": [
+    {
+      "dest": "tpcds1_hive1dot2_withdate",
+      "src": "Datasources/tpcds_hivegenerated_parquet/tpcds1_hive1dot2_parquet_withdate",
+      "mode": "cp"
+    },
+    {
+      "dest": "",
+      "src": "bin/execHive.sh framework/resources/Datasources/hive_storage/tpcds_parquet/tpcds1_hive1dot2_withdate.ddl",
+      "mode": "gen"
+    }
+  ]
 }

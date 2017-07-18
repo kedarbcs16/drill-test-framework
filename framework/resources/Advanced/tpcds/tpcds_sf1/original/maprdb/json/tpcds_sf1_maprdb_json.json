@@ -1,32 +1,34 @@
 {
-    "testId": "tpcds_sf1_original_maprdb_json",
-    "type": "group",
-    "description": "Test TPC-DS Queries on TPC-DS SF1 MapR-DB JSON Dataset",
-    "categories": [
-        "functional_maprdb"
-    ],
-    "dependencies" : ["maprdb"],
-    "matrices": [
-        {
-            "query-file": ".*.sql",
-            "schema": "mfs.tpcds_sf1_maprdb_json_views",
-            "output-format": "tsv",
-            "expected-file": ".*.e_tsv",
-            "verification-type": [
-                "in-memory"
-            ]
-        }
-    ],
-    "datasources": [
-	{
-            "mode": "cp",
-            "src": "Datasources/tpcds/sf1/maprdb/json",
-            "dest": "tpcds_sf1/maprdb/json/importFiles"
-        },
-        {
-            "mode": "gen",
-            "src": "Datasources/tpcds/maprdb/json/setupTables.sh 1",
-            "dest": ""
-        }
-    ]
+  "description": "Test TPC-DS Queries on TPC-DS SF1 MapR-DB JSON Dataset",
+  "type": "group",
+  "dependencies": [
+    "maprdb"
+  ],
+  "testId": "tpcds_sf1_original_maprdb_json",
+  "matrices": [
+    {
+      "verification-type": [
+        "in-memory"
+      ],
+      "output-format": "tsv",
+      "query-file": ".*.sql",
+      "expected-file": ".*.e_tsv",
+      "schema": "mfs.tpcds_sf1_maprdb_json_views"
+    }
+  ],
+  "categories": [
+    "functional"
+  ],
+  "datasources": [
+    {
+      "dest": "tpcds_sf1/maprdb/json/importFiles",
+      "src": "Datasources/tpcds/sf1/maprdb/json",
+      "mode": "cp"
+    },
+    {
+      "dest": "",
+      "src": "Datasources/tpcds/maprdb/json/setupTables.sh 1",
+      "mode": "gen"
+    }
+  ]
 }
