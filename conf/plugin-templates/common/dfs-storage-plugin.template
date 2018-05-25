@@ -30,6 +30,11 @@
         "writable" : true,
         "defaultInputFormat" : "parquet"
       },
+      "drillTestDirLateralTpchSf1Json" : {
+        "location" : "/drill/testdata/lateral/tpchsf1/json",
+        "writable" : true,
+        "defaultInputFormat" : "json"
+      },
       "drillTestDirUdfs" : {
         "location" : "/drill/testdata/udfs/",
         "writable" : true,

@@ -1,0 +1,1 @@
+select customer.c_custkey, customer.c_name, orders.o.o_orderkey, orders.o.o_totalprice from customer, lateral (select * from unnest(customer.c_orders) t(o) limit 0) orders order by customer.c_custkey limit 50;

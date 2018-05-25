@@ -1,0 +1,24 @@
+{
+    "testId": "lateral_unnest_json",
+    "type": "group",
+    "description": "Test queries via jdbc",
+    "submit-type": "jdbc",
+    "categories": [
+        "functional"
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "dfs.drillTestDirLateralTpchSf1Json",
+            "output-format": "tsv",
+            "expected-file": ".*.e",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+        {
+        }
+    ]
+}
