@@ -1,50 +1,23 @@
-3115	Customer#000003115	2159139	857.71
-53551	Customer#000053551	1600323	866.9
-64043	Customer#000064043	823814	870.88
-1351	Customer#000001351	5363650	877.3
-85468	Customer#000085468	3790757	884.52
-83222	Customer#000083222	5195557	891.74
-25090	Customer#000025090	1591073	895.39
-27490	Customer#000027490	1363943	896.59
-82009	Customer#000082009	5140706	896.8
-82949	Customer#000082949	3309383	908.18
-19379	Customer#000019379	3075460	909.18
-72847	Customer#000072847	2934784	912.1
-31762	Customer#000031762	4045319	913.45
-18178	Customer#000018178	5174117	913.92
-7502	Customer#000007502	5866437	916.41
-26977	Customer#000026977	90880	917.35
-68513	Customer#000068513	2804230	920.58
-44528	Customer#000044528	3888997	920.63
-24031	Customer#000024031	1774628	922.16
-55030	Customer#000055030	4045251	924.04
-30235	Customer#000030235	374528	924.51
-22637	Customer#000022637	1116935	927.16
-29983	Customer#000029983	4090212	927.91
-44681	Customer#000044681	1046118	928.72
-9428	Customer#000009428	5536513	928.92
-91147	Customer#000091147	1776866	929.69
-53648	Customer#000053648	3480036	931.22
-13348	Customer#000013348	4921923	935.11
-63356	Customer#000063356	8354	935.65
-81985	Customer#000081985	5496514	939.67
-5930	Customer#000005930	4197411	941.76
-83149	Customer#000083149	2093766	942.27
-77828	Customer#000077828	957542	944.34
-44666	Customer#000044666	2899681	945.17
-40279	Customer#000040279	2865863	945.99
-28570	Customer#000028570	567681	946.05
-87686	Customer#000087686	5659333	946.6
-25517	Customer#000025517	4810887	947.04
-6338	Customer#000006338	5989315	947.81
-59825	Customer#000059825	1175366	947.84
-60745	Customer#000060745	4688356	948.54
-56149	Customer#000056149	70048	951.81
-46945	Customer#000046945	5456998	952.28
-90173	Customer#000090173	5734945	953.08
-69785	Customer#000069785	5136806	954.02
-67226	Customer#000067226	4329476	954.32
-98242	Customer#000098242	4229635	954.94
-70879	Customer#000070879	4696897	956.24
-5290	Customer#000005290	5622560	956.85
-9178	Customer#000009178	626051	957.22
+0	SYSTEM ERROR: NullPointerException
+
+Fragment 3:0
+
+[Error Id: 8470a0cd-e3c4-4ef2-adb4-d5dc47ebbec2 on 10.10.30.168:31010]
+
+  (java.lang.NullPointerException) null
+    com.google.common.base.Preconditions.checkNotNull():210
+    org.apache.drill.exec.physical.impl.unnest.UnnestRecordBatch.innerNext():172
+    org.apache.drill.exec.record.AbstractRecordBatch.next():172
+    org.apache.drill.exec.physical.impl.BaseRootExec.next():103
+    org.apache.drill.exec.physical.impl.SingleSenderCreator$SingleSenderRootExec.innerNext():93
+    org.apache.drill.exec.physical.impl.BaseRootExec.next():93
+    org.apache.drill.exec.work.fragment.FragmentExecutor$1.run():292
+    org.apache.drill.exec.work.fragment.FragmentExecutor$1.run():279
+    java.security.AccessController.doPrivileged():-2
+    javax.security.auth.Subject.doAs():422
+    org.apache.hadoop.security.UserGroupInformation.doAs():1595
+    org.apache.drill.exec.work.fragment.FragmentExecutor.run():279
+    org.apache.drill.common.SelfCleaningRunnable.run():38
+    java.util.concurrent.ThreadPoolExecutor.runWorker():1149
+    java.util.concurrent.ThreadPoolExecutor$Worker.run():624
+    java.lang.Thread.run():748

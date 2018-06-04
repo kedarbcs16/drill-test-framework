@@ -1,50 +1,36 @@
-1	Customer#000000001	14656	28599.83
-1	Customer#000000001	52263	51134.82
-1	Customer#000000001	43879	83095.85
-1	Customer#000000001	34019	89230.03
-1	Customer#000000001	31653	152411.41
-1	Customer#000000001	53283	165928.33
-1	Customer#000000001	24322	231040.44
-1	Customer#000000001	36422	270087.44
-1	Customer#000000001	9154	357345.46
-10	Customer#000000010	1602	6751.57
-10	Customer#000000010	30306	30726.71
-10	Customer#000000010	35972	39228.39
-10	Customer#000000010	56775	42578.88
-10	Customer#000000010	13124	57676.34
-10	Customer#000000010	43078	61921.02
-10	Customer#000000010	30882	65297.83
-10	Customer#000000010	58979	69241.25
-10	Customer#000000010	50086	72065.37
-10	Customer#000000010	20195	99067.93
-10	Customer#000000010	55749	102944.7
-10	Customer#000000010	28898	122287.09
-10	Customer#000000010	54400	132173.75
-10	Customer#000000010	26785	148499.07
-10	Customer#000000010	49506	152699.84
-10	Customer#000000010	18307	158346.75
-10	Customer#000000010	16548	158826.22
-10	Customer#000000010	27200	173191.03
-10	Customer#000000010	40387	180784.32
-10	Customer#000000010	55492	187966.88
-10	Customer#000000010	9862	193015.83
-10	Customer#000000010	34311	209263.18
-10	Customer#000000010	11431	230289.6
-10	Customer#000000010	33095	239749.78
-10	Customer#000000010	20964	298876.15
-10	Customer#000000010	21729	309286.33
-10	Customer#000000010	17668	322342.37
-100	Customer#000000100	33154	30287.4
-100	Customer#000000100	227	69020.68
-100	Customer#000000100	4032	78049.89
-100	Customer#000000100	52994	89601.52
-100	Customer#000000100	27808	101817.31
-100	Customer#000000100	32480	122188.64
-100	Customer#000000100	39457	127377.48
-100	Customer#000000100	9317	156751.98
-100	Customer#000000100	31329	160313.73
-100	Customer#000000100	44386	166573.92
-100	Customer#000000100	54242	183377.45
-100	Customer#000000100	34791	200763.59
-100	Customer#000000100	28996	269546.76
-100	Customer#000000100	16199	291936.7
+0	SYSTEM ERROR: NullPointerException
+
+Fragment 3:0
+
+[Error Id: 8eabf89e-b5f1-4d1a-b987-6b7f029f5ad1 on 10.10.30.168:31010]
+
+  (java.lang.NullPointerException) null
+    com.google.common.base.Preconditions.checkNotNull():210
+    org.apache.drill.exec.physical.impl.unnest.UnnestRecordBatch.innerNext():172
+    org.apache.drill.exec.record.AbstractRecordBatch.next():172
+    org.apache.drill.exec.record.AbstractRecordBatch.next():119
+    org.apache.drill.exec.record.AbstractRecordBatch.next():109
+    org.apache.drill.exec.record.AbstractUnaryRecordBatch.innerNext():63
+    org.apache.drill.exec.physical.impl.project.ProjectRecordBatch.innerNext():137
+    org.apache.drill.exec.record.AbstractRecordBatch.next():172
+    org.apache.drill.exec.record.AbstractRecordBatch.next():119
+    org.apache.drill.exec.record.AbstractRecordBatch.next():109
+    org.apache.drill.exec.record.AbstractUnaryRecordBatch.innerNext():63
+    org.apache.drill.exec.record.AbstractRecordBatch.next():172
+    org.apache.drill.exec.record.AbstractRecordBatch.next():119
+    org.apache.drill.exec.record.AbstractRecordBatch.next():109
+    org.apache.drill.exec.record.AbstractUnaryRecordBatch.innerNext():63
+    org.apache.drill.exec.record.AbstractRecordBatch.next():172
+    org.apache.drill.exec.physical.impl.BaseRootExec.next():103
+    org.apache.drill.exec.physical.impl.SingleSenderCreator$SingleSenderRootExec.innerNext():93
+    org.apache.drill.exec.physical.impl.BaseRootExec.next():93
+    org.apache.drill.exec.work.fragment.FragmentExecutor$1.run():292
+    org.apache.drill.exec.work.fragment.FragmentExecutor$1.run():279
+    java.security.AccessController.doPrivileged():-2
+    javax.security.auth.Subject.doAs():422
+    org.apache.hadoop.security.UserGroupInformation.doAs():1595
+    org.apache.drill.exec.work.fragment.FragmentExecutor.run():279
+    org.apache.drill.common.SelfCleaningRunnable.run():38
+    java.util.concurrent.ThreadPoolExecutor.runWorker():1149
+    java.util.concurrent.ThreadPoolExecutor$Worker.run():624
+    java.lang.Thread.run():748
