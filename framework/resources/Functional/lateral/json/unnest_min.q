@@ -1,0 +1,1 @@
+select customer.c_custkey, customer.c_name, orders.minprice from customer, lateral (select min(t.o.o_totalprice) as minprice from unnest(customer.c_orders) t(o)) orders order by customer.c_custkey limit 50;

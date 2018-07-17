@@ -1,0 +1,1 @@
+select f.c_custkey, f.c_name, f.o.o_orderpriority as orderpriority, sum(f.o.o_totalprice) as totalprice from (select c_custkey, c_name, flatten(c_orders) as o from customer) f group by f.c_custkey, f.c_name, f.o.o_orderpriority order by f.c_custkey, orderpriority, totalprice  limit 50;

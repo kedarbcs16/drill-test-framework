@@ -1,0 +1,1 @@
+select customer.c_custkey, customer.c_name, orders.minprice, orders.maxprice, orders.avgprice, orders.sumprice from customer, lateral (select min(t.o.o_totalprice) as minprice, max(t.o.o_totalprice) as maxprice, avg(t.o.o_totalprice) as avgprice, sum(t.o.o_totalprice) as sumprice from unnest(customer.c_orders) t(o)) orders order by customer.c_custkey limit 50;

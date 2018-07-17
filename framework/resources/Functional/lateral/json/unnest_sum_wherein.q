@@ -1,0 +1,1 @@
+select customer.c_custkey, customer.c_name, orders.totalprice from customer, lateral (select sum(t.o.o_totalprice) as totalprice from unnest(customer.c_orders) t(o) WHERE t.o.o_totalprice in (89230.03,270087.44,246408.53,82657.72,153941.38,65277.06,180309.76)) orders order by customer.c_custkey limit 50;

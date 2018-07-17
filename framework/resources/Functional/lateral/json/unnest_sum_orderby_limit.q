@@ -1,0 +1,1 @@
+select customer.c_custkey, customer.c_name, ord.totalprice from customer, lateral (select sum(orders.totalprice) as totalprice from (select t.o.o_totalprice as totalprice from unnest(customer.c_orders) t(o) order by totalprice limit 10) orders ) ord order by customer.c_custkey limit 50;

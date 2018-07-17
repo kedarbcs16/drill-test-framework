@@ -1,0 +1,1 @@
+select custkey, name, orderkey, totalprice from (select row_number() over(partition by f.c_custkey order by f.o.o_orderkey) as rn, f.c_custkey custkey, f.c_name name, f.o.o_orderkey orderkey, f.o.o_totalprice totalprice from (select c_custkey, c_name, flatten(c_orders) as o from customer) f) where rn < 11 order by custkey, orderkey, totalprice limit 50;

@@ -1,0 +1,1 @@
+select customer.c_custkey, customer.c_name, orders.avgprice from customer, lateral (select avg(t.o.o_totalprice) as avgprice from unnest(customer.c_orders) t(o)) orders order by customer.c_custkey limit 50;

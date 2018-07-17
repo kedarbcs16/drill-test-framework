@@ -1,0 +1,1 @@
+select customer.c_custkey, customer.c_name, orders.maxprice from customer, lateral (select max(t.o.o_totalprice) as maxprice from unnest(customer.c_orders) t(o)) orders order by customer.c_custkey limit 50;
