@@ -1,0 +1,1 @@
+select lineitem.l_linenumber,lineitem.l_orderkey,lineitem.l_linestatus from lineitem where cast(lineitem.l_orderkey as int)in (select cast(o_orderkey as int) from (select * from orders where cast(orders.o_custkey as int) in (select cast(customer.c_custkey as int) from customer)) orders1 ) order by  lineitem.l_linenumber,lineitem.l_orderkey,lineitem.l_linestatus limit 10;

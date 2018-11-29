@@ -1,0 +1,1 @@
+select * from orders where cast(orders.o_custkey as int) in (select cast(customer.c_custkey as int) from customer) order by O_ORDERKEY,O_CUSTKEY,O_ORDERSTATUS,o_totalprice,O_ORDERDATE,O_ORDERPRIORITY,O_CLERK,O_SHIPPRIORITY,O_COMMENT limit 10;

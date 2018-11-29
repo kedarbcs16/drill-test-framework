@@ -20,6 +20,30 @@
         "writable" : true,
         "defaultInputFormat" : "parquet"
       },
+      "drilltesttpchsf1json": {
+        "location": "/drill/testdata/tpch/sf1/",
+        "writable": true,
+        "defaultInputFormat": null,
+        "allowAccessOutsideWorkspace": false
+      },
+      "drilltesttpchsf1parquet": {
+        "location": "/drill/testdata/tpch/sf1/parquet/",
+        "writable": true,
+        "defaultInputFormat": null,
+        "allowAccessOutsideWorkspace": false
+      },
+      "drilltestdirtpch01parquet": {
+        "location": "/drill/testdata/Tpch0.01/parquet/",
+        "writable": true,
+        "defaultInputFormat": null,
+        "allowAccessOutsideWorkspace": false
+      },
+      "drilltestdirtpch01json": {
+        "location": "/drill/testdata/Tpch0.01/json/",
+        "writable": true,
+        "defaultInputFormat": null,
+        "allowAccessOutsideWorkspace": false
+      },
       "drillTestDirAmplab" : {
         "location" : "/drill/testdata/amplab",
         "writable" : true,
