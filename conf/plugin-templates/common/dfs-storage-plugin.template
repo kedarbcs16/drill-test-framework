@@ -21,13 +21,13 @@
         "defaultInputFormat" : "parquet"
       },
       "drilltesttpchsf1json": {
-        "location": "/drill/testdata/tpch/sf1/",
+        "location": "/drill/testdata/tpch_sf1",
         "writable": true,
         "defaultInputFormat": null,
         "allowAccessOutsideWorkspace": false
       },
       "drilltesttpchsf1parquet": {
-        "location": "/drill/testdata/tpch/sf1/parquet/",
+        "location": "/drill/testdata/tpch_sf1/parquet/",
         "writable": true,
         "defaultInputFormat": null,
         "allowAccessOutsideWorkspace": false
