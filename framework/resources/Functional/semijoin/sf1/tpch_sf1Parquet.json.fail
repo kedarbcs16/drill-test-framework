@@ -1,0 +1,23 @@
+{
+    "testId": "semiJoinTpchSf1Parquet",
+    "type": "group",
+    "description": "Test semi join queries for tpch sf1 parquet data via jdbc",
+    "submit-type": "jdbc",
+    "categories": [
+        "functional"
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.sql",
+            "schema": "dfs.drilltesttpchsf1Parquet",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "create-data-in-folder": true,
+	    "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+    ]
+}
