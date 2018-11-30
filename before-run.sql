@@ -8,6 +8,6 @@ alter system set `drill.exec.hashagg.fallback.enabled` = true;
 alter system set `drill.exec.hashjoin.fallback.enabled` = true;
 select * from sys.options where status = 'CHANGED';
 alter system set `planner.enable_nljoin_for_scalar_only` = false;
-alter system set `planner.enable_semijoin` = false;
+alter system set `planner.enable_semijoin` = true;
 select * from sys.version;
 select * from sys.drillbits;
