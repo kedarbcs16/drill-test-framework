@@ -1,1 +1,1 @@
-select orders.o_totalprice from orders where (cast(orders.o_custkey as int),cast(orders.o_totalprice as int)) in (select cast(customer.c_custkey as int),cast(customer.c_acctbal as int) from customer)  order by orders.o_totalprice limit 10;
+select orders.o_totalprice from orders where (orders.o_custkey,orders.o_totalprice) in (select customer.c_custkey,customer.c_acctbal from customer)  order by orders.o_totalprice limit 10;
