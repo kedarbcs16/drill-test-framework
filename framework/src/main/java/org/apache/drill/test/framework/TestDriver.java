@@ -340,12 +340,27 @@ public class TestDriver {
       if(executionFailures.size()>0 || dataVerificationFailures.size()>0 || planVerificationFailures.size()>0 || timeoutFailures.size()>0) {
         LOG.info("\n"+DrillTestDefaults.LINE_BREAK+"\nITERATION FAILURES\n"+DrillTestDefaults.LINE_BREAK);
       }
-
-      if(executionFailures.size()>0){
+      
+       if(executionFailures.size()>0){
         LOG.info("\nExecution Failures:\n");
         for (DrillTest test : executionFailures) {
-          LOG.info("Query: " + test.getInputFile() + "\n" + test.getQuery());
-          LOG.info("\nException:\n", test.getException());
+          LOG.info("Query: " + test.getInputFile() + "\n" + test.getQuery()+"\n");
+          String msg = test.getException().getMessage();
+          String[] stackTraceArray = msg.split("\n");
+          for(String stackTraceElement : stackTraceArray){
+             int indexOfStackTrace =  java.util.Arrays.asList(stackTraceArray).indexOf(stackTraceElement);
+             if(indexOfStackTrace < 15){
+               LOG.info(stackTraceElement);
+             }
+             else{
+               break;
+             }
+          }
+          if(stackTraceArray.length > 15)
+            LOG.info("...\n");
+          else
+            LOG.info("\n");
+
         }
       }
 
