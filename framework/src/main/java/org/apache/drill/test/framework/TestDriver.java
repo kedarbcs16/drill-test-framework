@@ -346,21 +346,21 @@ public class TestDriver {
         for (DrillTest test : executionFailures) {
           LOG.info("Query: " + test.getInputFile() + "\n" + test.getQuery()+"\n");
           String msg = test.getException().getMessage();
-          String[] stackTraceArray = msg.split("\n");
+          String[] stackTraceArray = msg.split("Caused By");
           for(String stackTraceElement : stackTraceArray){
              int indexOfStackTrace =  java.util.Arrays.asList(stackTraceArray).indexOf(stackTraceElement);
-             if(indexOfStackTrace < 15){
+             if(indexOfStackTrace == 0){
                LOG.info(stackTraceElement);
              }
              else{
                break;
              }
           }
-          if(stackTraceArray.length > 15)
+          //if(stackTraceArray.length > 15)
             LOG.info("...\n");
-          else
-            LOG.info("\n");
-
+          //else
+          //  LOG.info("\n");
+          
         }
       }
 
